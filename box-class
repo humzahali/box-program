@@ -1,0 +1,83 @@
+/*
+ * Author: Humzah Ali
+ * Date: 13/11/15
+ * Project: Box Program
+ * File: Box.cs
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Properties
+{
+    class Box
+    {
+        //attributes
+        private int length;
+        private int width;
+        private int height;
+        private string colour;
+
+        //methods
+        //constuctor
+        //initialise box with units
+        //dimensions and colour specified
+        public Box(string col)
+        {
+            this.length = 1;
+            this.width = 1;
+            this.height = 1;
+            this.colour = col;
+        }
+        //constructor 2
+        //units specified by user
+        public Box(int l, int w, int h)
+        {
+            this.length = l;
+            this.height = h;
+            this.width = w;
+            this.colour = "black";
+        }
+        //constructor 3
+        //all units and variables specified by the user
+        public Box(int l, int w, int h, string col)
+        {
+            this.length = l;
+            this.height = h;
+            this.width = w;
+            this.colour = col;
+        }
+
+        //display method
+        public override string ToString()
+        {
+            string s;
+
+            s = "Box with width of " + this.width.ToString() +
+                " and a height of " + this.height.ToString() +
+                " and a length of " + this.length.ToString() +
+                " and a colour of " + this.colour; //the value and attributes of the box
+
+            return s;
+        }//end ToString() override method
+
+        public int CalculateSurfaceArea()
+        {
+            int area;//declare area variable
+
+            area = this.height * this.width;
+            area += this.height * this.length;
+            area += this.width * this.length;
+            area += area;//times area by 2
+
+            return area;
+        }//end CalculateSurfaceArea()
+
+        public int CalculateVolume()
+        {
+            return this.height * this.length * this.width;//formula to calculate area
+        }//end CalculateVolume()
+    }//end class
+}//end namespace
